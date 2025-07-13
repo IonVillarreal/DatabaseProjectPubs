@@ -1,0 +1,162 @@
+# SQL Server Database Project .gitignore
+
+## Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+
+## SQL Server Database Project files to ignore
+*.dacpac
+*.publishxml
+*.publish.xml
+*.jfm
+
+## SQL Server Data Tools (SSDT)
+*.dbmdl
+*.dbproj.schemaview
+*.pfx
+*.publishsettings
+*.dacpac
+
+## Visual Studio Code
+.vscode/
+*.code-workspace
+
+## Local History for Visual Studio Code
+.history/
+
+## Visual Studio
+.vs/
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+## User-specific files (MonoDevelop/Xamarin Studio)
+*.userprefs
+
+## Auto Generated files
+ClientBin/
+[Ss]tyle[Cc]op.*
+~$*
+*~
+*.dbg
+*.log
+*.scc
+
+## Build Results of an ATL Project
+[Dd]ebugPS/
+[Rr]eleasePS/
+dlldata.c
+
+## Local databases
+*.mdf
+*.ldf
+*.ndf
+
+## SQL Server files
+*.mdf
+*.ldf
+*.ndf
+*.bak
+*.trn
+
+## Azure Functions localsettings file
+local.settings.json
+
+## Python tools for Visual Studio (PTVS)
+__pycache__/
+*.pyc
+
+## Cake - Uncomment if you are using it
+# tools/**
+# !tools/packages.config
+
+## Tabs Studio
+*.tss
+
+## Telerik's JustMock configuration file
+*.jmconfig
+
+## BizTalk build output
+*.btp.cs
+*.btm.cs
+*.odx.cs
+*.xsd.cs
+
+## OpenCover UI analysis results
+OpenCover/
+
+## Azure Stream Analytics local run output
+ASALocalRun/
+
+## MSBuild Binary and Structured Log
+*.binlog
+
+## NVidia Nsight GPU debugger configuration file
+*.nvuser
+
+## MFractors (Xamarin productivity tool) working folder
+.mfractor/
+
+## Local History for Visual Studio
+.localhistory/
+
+## BeatPulse healthcheck temp database
+healthchecksdb
+
+## Backup folder for Package Reference Convert tool in Visual Studio 2017
+MigrationBackup/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.tmp
+*.temp
+
+# Windows Installer files
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
