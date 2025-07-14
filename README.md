@@ -150,35 +150,34 @@ erDiagram
 ```
 DatabaseProjectPubs/
 ├── README.md
-├── DatabaseProjectPubs.sqlproj
-├── dbo/
-│   ├── Tables/
-│   │   ├── authors.sql
-│   │   ├── discounts.sql
-│   │   ├── employee.sql
-│   │   ├── jobs.sql
-│   │   ├── pub_info.sql
-│   │   ├── publishers.sql
-│   │   ├── roysched.sql
-│   │   ├── sales.sql
-│   │   ├── stores.sql
-│   │   ├── titleauthor.sql
-│   │   └── titles.sql
-│   ├── StoredProcedures/
-│   │   ├── byroyalty.sql
-│   │   ├── GetDatabaseRowVersion.sql
-│   │   ├── GetSalesChangeByRowVersion.sql
-│   │   ├── GetStoresChangeByRowVersion.sql
-│   │   ├── GetTitleChangeByRowVersion.sql
-│   │   ├── reptq1.sql
-│   │   ├── reptq2.sql
-│   │   └── reptq3.sql
-│   ├── Views/
-│   │   └── titleview.sql
-│   └── UserDefinedTypes/
-│       ├── empid.sql
-│       ├── id.sql
-│       └── tid.sql
-└── Security/
-    └── staging.sql
+├── BDPubs
+│   └── BDPubsOLTP
+│       └── Schema
+│           ├── StoredProcedures
+│           │   ├── byroyalty.sql
+│           │   ├── GetDatabaseRowVersion.sql
+│           │   ├── GetSalesChangeByRowVersion.sql
+│           │   ├── GetStoresChangeByRowVersion.sql
+│           │   ├── GetTitleChangeByRowVersion.sql
+│           │   ├── reptq1.sql
+│           │   ├── reptq2.sql
+│           │   └── reptq3.sql
+│           ├── Tables
+│           │   ├── authors.sql
+│           │   ├── discounts.sql
+│           │   ├── employee.sql
+│           │   ├── jobs.sql
+│           │   ├── pub_info.sql
+│           │   ├── publishers.sql
+│           │   ├── roysched.sql
+│           │   ├── sales.sql
+│           │   ├── stores.sql
+│           │   ├── titleauthor.sql
+│           │   └── titles.sql
+│           ├── UserDefinedTypes
+│           │   ├── empid.sql
+│           │   ├── id.sql
+│           │   └── tid.sql
+│           └── Views
+│               └── titleview.sql
 ```
