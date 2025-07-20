@@ -149,35 +149,165 @@ erDiagram
 
 ```
 DatabaseProjectPubs/
+DatabaseProjectPubs/
 ├── README.md
 ├── BDPubs
-│   └── BDPubsOLTP
+│   ├── BDPubsOLTP
+│   │   └── Schema
+│   │       ├── StoredProcedures
+│   │       │   ├── byroyalty.sql
+│   │       │   ├── GetDatabaseRowVersion.sql
+│   │       │   ├── GetSalesChangeByRowVersion.sql
+│   │       │   ├── GetStoresChangeByRowVersion.sql
+│   │       │   ├── GetTitleChangeByRowVersion.sql
+│   │       │   ├── reptq1.sql
+│   │       │   ├── reptq2.sql
+│   │       │   └── reptq3.sql
+│   │       ├── Tables
+│   │       │   ├── authors.sql
+│   │       │   ├── discounts.sql
+│   │       │   ├── employee.sql
+│   │       │   ├── jobs.sql
+│   │       │   ├── pub_info.sql
+│   │       │   ├── publishers.sql
+│   │       │   ├── roysched.sql
+│   │       │   ├── sales.sql
+│   │       │   ├── stores.sql
+│   │       │   ├── titleauthor.sql
+│   │       │   └── titles.sql
+│   │       ├── UserDefinedTypes
+│   │       │   ├── empid.sql
+│   │       │   ├── id.sql
+│   │       │   └── tid.sql
+│   │       └── Views
+│   │           └── titleview.sql
+│   └── BDPubsDW
 │       └── Schema
-│           ├── StoredProcedures
-│           │   ├── byroyalty.sql
-│           │   ├── GetDatabaseRowVersion.sql
-│           │   ├── GetSalesChangeByRowVersion.sql
-│           │   ├── GetStoresChangeByRowVersion.sql
-│           │   ├── GetTitleChangeByRowVersion.sql
-│           │   ├── reptq1.sql
-│           │   ├── reptq2.sql
-│           │   └── reptq3.sql
 │           ├── Tables
-│           │   ├── authors.sql
-│           │   ├── discounts.sql
-│           │   ├── employee.sql
-│           │   ├── jobs.sql
-│           │   ├── pub_info.sql
-│           │   ├── publishers.sql
-│           │   ├── roysched.sql
-│           │   ├── sales.sql
-│           │   ├── stores.sql
-│           │   ├── titleauthor.sql
-│           │   └── titles.sql
-│           ├── UserDefinedTypes
-│           │   ├── empid.sql
-│           │   ├── id.sql
-│           │   └── tid.sql
-│           └── Views
-│               └── titleview.sql
+│           │   ├── DimAuthor.sql
+│           │   ├── DimDate.sql
+│           │   ├── DimStore.sql
+│           │   ├── DimTitle.sql
+│           │   └── FactSales.sql
+```
+
+
+# Modelo Estrella - Pubs Data Warehouse
+
+Este es el modelo estrella basado en las tablas `DimAuthor`, `DimDate`, `DimStore`, `DimTitle` y la tabla de hechos `FactSales`.
+
+## Diagrama ER (Mermaid)
+
+```mermaid
+
+erDiagram
+    DimAuthor {
+        int AuthorKey PK
+        varchar au_id_original
+        varchar title_id_original
+        varchar au_fname
+        varchar au_lname
+        varchar author_full_name
+        char phone
+        varchar address
+        varchar city
+        char state
+        char zip
+        bit contract
+        tinyint au_ord
+        int royaltyper
+        varchar title
+        char title_type
+        datetime2 RowInsertedDate
+        datetime2 RowUpdatedDate
+        bit IsCurrentRecord
+    }
+
+    DimDate {
+        int DateKey PK
+        date FullDate
+        int Year
+        int Quarter
+        int Month
+        int Day
+        varchar MonthName
+        char MonthNameShort
+        varchar DayName
+        char DayNameShort
+        int DayOfYear
+        int WeekOfYear
+        int DayOfWeek
+        bit IsWeekend
+        bit IsHoliday
+        varchar HolidayName
+        varchar QuarterName
+        int SemesterNumber
+        varchar SemesterName
+        varchar DateFormatted
+        varchar MonthYear
+        varchar YearMonth
+    }
+
+    DimStore {
+        int StoreKey PK
+        char stor_id_original
+        varchar stor_name
+        varchar stor_address
+        varchar city
+        char state
+        char zip
+        datetime2 RowInsertedDate
+        datetime2 RowUpdatedDate
+        bit IsCurrentRecord
+    }
+
+    DimTitle {
+        int TitleKey PK
+        varchar title_id_original
+        varchar title
+        char type
+        money price
+        money advance
+        int royalty
+        int ytd_sales
+        varchar notes
+        datetime pubdate
+        char pub_id_original
+        varchar publisher_name
+        varchar publisher_city
+        char publisher_state
+        varchar publisher_country
+        datetime2 RowInsertedDate
+        datetime2 RowUpdatedDate
+        bit IsCurrentRecord
+    }
+
+    FactSales {
+        int SalesKey PK
+        int StoreKey FK
+        int TitleKey FK
+        int AuthorKey FK
+        int OrderDateKey FK
+        char stor_id_original
+        varchar title_id_original
+        varchar ord_num_original
+        smallint Quantity
+        money UnitPrice
+        money TotalAmount
+        decimal DiscountPercent
+        money DiscountAmount
+        money NetAmount
+        varchar PayTerms
+        datetime OrderDate
+        datetime2 RowInsertedDate
+        datetime2 RowUpdatedDate
+        int ETL_BatchID
+    }
+
+    %% Relaciones principales
+    DimAuthor ||--o{ FactSales : "AuthorKey"
+    DimDate ||--o{ FactSales : "OrderDateKey"
+    DimStore ||--o{ FactSales : "StoreKey"
+    DimTitle ||--o{ FactSales : "TitleKey"
+
 ```
