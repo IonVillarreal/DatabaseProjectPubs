@@ -29,36 +29,3 @@ CREATE TABLE DimStore (
     CONSTRAINT PK_DimStore PRIMARY KEY (StoreKey),
     CONSTRAINT UK_DimStore_StorID UNIQUE (stor_id_original)
 );
-
--- Índices para mejorar performance
-CREATE NONCLUSTERED INDEX IX_DimStore_StorName 
-    ON DimStore (stor_name);
-
-CREATE NONCLUSTERED INDEX IX_DimStore_City 
-    ON DimStore (city);
-
-CREATE NONCLUSTERED INDEX IX_DimStore_State 
-    ON DimStore (state);
-
--- Comentarios de documentación
-EXEC sys.sp_addextendedproperty 
-    @name = N'MS_Description',
-    @value = N'Dimensión de tiendas/librerías para análisis de ventas',
-    @level0type = N'SCHEMA', @level0name = N'dbo',
-    @level1type = N'TABLE', @level1name = N'DimStore';
-
-EXEC sys.sp_addextendedproperty 
-    @name = N'MS_Description',
-    @value = N'Llave artificial auto-generada para identificar únicamente cada tienda',
-    @level0type = N'SCHEMA', @level0name = N'dbo',
-    @level1type = N'TABLE', @level1name = N'DimStore',
-    @level2type = N'COLUMN', @level2name = N'StoreKey';
-
-EXEC sys.sp_addextendedproperty 
-    @name = N'MS_Description',
-    @value = N'Identificador original de la tienda en el sistema OLTP',
-    @level0type = N'SCHEMA', @level0name = N'dbo',
-    @level1type = N'TABLE', @level1name = N'DimStore',
-    @level2type = N'COLUMN', @level2name = N'stor_id_original';
-
-GO
