@@ -59,3 +59,62 @@ CREATE TABLE FactSales (
     CONSTRAINT CK_FactSales_DiscountPercent 
         CHECK (DiscountPercent >= 0 AND DiscountPercent <= 100)
 );
+
+-- Índices para mejorar performance de consultas
+CREATE NONCLUSTERED INDEX IX_FactSales_StoreKey 
+    ON FactSales (StoreKey);
+
+CREATE NONCLUSTERED INDEX IX_FactSales_TitleKey 
+    ON FactSales (TitleKey);
+
+CREATE NONCLUSTERED INDEX IX_FactSales_AuthorKey 
+    ON FactSales (AuthorKey);
+
+CREATE NONCLUSTERED INDEX IX_FactSales_OrderDateKey 
+    ON FactSales (OrderDateKey);
+
+CREATE NONCLUSTERED INDEX IX_FactSales_OrderDate 
+    ON FactSales (OrderDate);
+
+-- Índices compuestos para consultas comunes
+CREATE NONCLUSTERED INDEX IX_FactSales_Store_Date 
+    ON FactSales (StoreKey, OrderDateKey) 
+    INCLUDE (Quantity, TotalAmount);
+
+CREATE NONCLUSTERED INDEX IX_FactSales_Title_Date 
+    ON FactSales (TitleKey, OrderDateKey) 
+    INCLUDE (Quantity, TotalAmount);
+
+-- Índice para claves de negocio (lookup durante ETL)
+CREATE NONCLUSTERED INDEX IX_FactSales_BusinessKeys 
+    ON FactSales (stor_id_original, title_id_original, ord_num_original);
+
+-- Comentarios de documentación
+EXEC sys.sp_addextendedproperty 
+    @name = N'MS_Description',
+    @value = N'Tabla de hechos principal para análisis de ventas de libros',
+    @level0type = N'SCHEMA', @level0name = N'dbo',
+    @level1type = N'TABLE', @level1name = N'FactSales';
+
+EXEC sys.sp_addextendedproperty 
+    @name = N'MS_Description',
+    @value = N'Llave artificial única para cada venta',
+    @level0type = N'SCHEMA', @level0name = N'dbo',
+    @level1type = N'TABLE', @level1name = N'FactSales',
+    @level2type = N'COLUMN', @level2name = N'SalesKey';
+
+EXEC sys.sp_addextendedproperty 
+    @name = N'MS_Description',
+    @value = N'Cantidad de libros vendidos en esta transacción',
+    @level0type = N'SCHEMA', @level0name = N'dbo',
+    @level1type = N'TABLE', @level1name = N'FactSales',
+    @level2type = N'COLUMN', @level2name = N'Quantity';
+
+EXEC sys.sp_addextendedproperty 
+    @name = N'MS_Description',
+    @value = N'Monto total calculado (Quantity * UnitPrice)',
+    @level0type = N'SCHEMA', @level0name = N'dbo',
+    @level1type = N'TABLE', @level1name = N'FactSales',
+    @level2type = N'COLUMN', @level2name = N'TotalAmount';
+
+GO
