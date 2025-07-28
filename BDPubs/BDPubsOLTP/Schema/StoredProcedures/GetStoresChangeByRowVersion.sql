@@ -23,7 +23,7 @@ SELECT s.[stor_id]
       ,d.[lowqty]
       ,d.[highqty]
       ,d.[discount]
-        FROM [pubs].[dbo].[stores] as s
+        FROM [dbo].[stores] as s
 		LEFT join [dbo].[discounts] as d on (s.stor_id=d.stor_id)
 		WHERE (s.[RowVersion]>CONVERT(rowversion, @startRow) and s.[RowVersion]<=CONVERT(rowversion, @endRow))
 		or (d.RowVersion> convert(rowversion,@startRow) and d.RowVersion<= convert(rowversion,@endRow))

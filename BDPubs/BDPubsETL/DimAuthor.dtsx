@@ -1,0 +1,1764 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/27/2025 2:25:39 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-D34CDM2"
+  DTS:CreatorName="DESKTOP-D34CDM2\HP CORE i3"
+  DTS:DTSID="{B0C6F780-7302-42F5-9282-89D63A535CB4}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.2"
+  DTS:LocaleID="3082"
+  DTS:ObjectName="DimAuthor"
+  DTS:PackageType="5"
+  DTS:VersionBuild="20"
+  DTS:VersionGUID="{BDB091D4-9F9E-4F0C-825F-79F85961E80A}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.PubsDataWarehouse.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{149B3D33-68C3-461C-94B0-93E72D88A70D}"
+      DTS:ObjectName="localhost.PubsDataWarehouse.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;User ID=sa;Initial Catalog=PubsDataWarehouse;Provider=MSOLEDBSQL.1;Auto Translate=False;Application Name=SSIS-DimAuthor-{149B3D33-68C3-461C-94B0-93E72D88A70D}localhost.PubsDataWarehouse.sa;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAnoSofNQxZEuNOLe4Po+kgQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABi1BleVjfAdK9JYbAbHc9cEwUlhYKayli3Ddr/smBVfAAAAAAOgAAAAAIAACAAAAClNFdebNCMfYvD9qkrncM93hw+2qjBXPngvbxHB8prISAAAAAXM+NdW+3tqeVu8Rx+33i/OGua/wDkZ3lxyGLbQhOtZ0AAAAAZZiD15Rt0T6gvZVpcGFPADtlk2N1vANcRCgs7PJZzwuJ9sRZSBotMdO/kqnNML30R8GeHQZK7JE1zkP/wbu08</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.Pubs_OLTP.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{BD715EB4-1B6C-41DA-95FF-2E7D47A179FB}"
+      DTS:ObjectName="localhost.Pubs_OLTP.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;User ID=sa;Initial Catalog=Pubs_OLTP;Provider=MSOLEDBSQL.1;Auto Translate=False;Application Name=SSIS-DimAuthor-{BD715EB4-1B6C-41DA-95FF-2E7D47A179FB}localhost.Pubs_OLTP.sa;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAnoSofNQxZEuNOLe4Po+kgQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAGxTipFc1pwaWo7bS3tXpuiPKLzpKstA0J7q9IcoNIZQAAAAAOgAAAAAIAACAAAABk21YUeb2n/UX6vbS0tbJMVQ7KUNayZnBhWFbWxDBFriAAAABNSSnqZfiTj8q+RZyHxot2+RNMz5kJg5Cbpfh5EtxePEAAAADOf3pn6JH1iW4ZVcuVp1sYy1Ubiu/hUaDS7qxcmXtvOLuh3BYUrtHMKiPRyxVREivUjIR0z4HlD0M/fQP8G5z7</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{63AFE304-20F5-4BA2-BAC9-76699CF1EE60}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="dbts">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{183D7D5B-0032-4707-98CE-3AA028B3A2E8}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="lastrowvalue">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Actualizacion"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{9447D378-919E-409B-89D6-59097E1986C8}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Actualizacion"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{149B3D33-68C3-461C-94B0-93E72D88A70D}"
+          SQLTask:SqlStatementSource="EXECUTE [dbo].[UpdateLastPackageRowVersion] @tableName = 'authors', @lastRowVersion = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::dbts"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Añadir Authors"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{D51DC365-B0E3-4A4C-A7B8-DBF51BFEAABE}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Añadir Authors"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Añadir Authors\Búsqueda"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Búsqueda;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;6"
+              description="Combina columnas adicionales con el flujo de datos mediante la búsqueda de valores en una tabla. Por ejemplo, se combina la columna 'id. de empleado' con la tabla de empleados para obtener la 'fecha de contratación' y 'el nombre de empleado'. Se recomienda esta transformación cuando hay suficiente espacio en memoria para la tabla de búsqueda."
+              name="Búsqueda"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la instrucción SQL que genera la tabla de búsqueda."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimAuthor]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica una instrucción SQL que usa parámetros para generar la tabla de búsqueda."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimAuthor]) [refTable]
+where [refTable].[au_id_original] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el tipo de conexión utilizado para tener acceso al conjunto de datos de referencia."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el tipo de caché de la tabla de búsqueda."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cómo la transformación de búsquedas trata las filas sin entradas coincidentes en el conjunto de datos de referencia."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el porcentaje de la caché asignado a las filas sin entradas coincidentes en el conjunto de datos de referencia."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Uso de memoria máximo para la caché de referencia en una plataforma de 32 bits."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Uso de memoria máximo para la caché de referencia en una plataforma de 64 bits."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indica si se debe hacer referencia a metadatos en formato XML."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="AuthorKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="au_id_original" dataType="DT_STR" length="11" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="title_id_original" dataType="DT_STR" length="6" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="au_fname" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="au_lname" dataType="DT_STR" length="40" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="author_full_name" dataType="DT_STR" length="61" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="phone" dataType="DT_STR" length="12" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="address" dataType="DT_STR" length="40" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="city" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="state" dataType="DT_STR" length="2" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="zip" dataType="DT_STR" length="5" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="contract" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="au_ord" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="royaltyper" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="title" dataType="DT_STR" length="80" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="title_type" dataType="DT_STR" length="12" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="RowInsertedDate" dataType="DT_DBTIMESTAMP2" length="0" precision="0" scale="7" codePage="0"/&gt;&lt;referenceColumn name="RowUpdatedDate" dataType="DT_DBTIMESTAMP2" length="0" precision="0" scale="7" codePage="0"/&gt;&lt;referenceColumn name="IsCurrentRecord" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Especifica la lista de identificadores de linaje que están asignados a los parámetros que usa la instrucción SQL de la propiedad SQLCommand. Las entradas de la lista están separadas por puntos y comas."
+                  name="ParameterMap">#{Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[au_id]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determina si las claves duplicadas de los datos de referencia se deben tratar como errores cuando se usa el modo de caché."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Añadir Authors\Búsqueda.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.PubsDataWarehouse.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.PubsDataWarehouse.sa]"
+                  description="Administrador de conexiones utilizado para obtener acceso a los datos de búsqueda."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Añadir Authors\Búsqueda.Inputs[Entrada de búsqueda]"
+                  name="Entrada de búsqueda">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Añadir Authors\Búsqueda.Inputs[Entrada de búsqueda].Columns[au_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="11"
+                      cachedName="au_id"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[au_id]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia con la que se combina una columna."
+                          name="JoinToReferenceColumn">au_id_original</property>
+                        <property
+                          dataType="System.Null"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Añadir Authors\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda]"
+                  errorOrTruncationOperation="Búsqueda"
+                  exclusionGroup="1"
+                  name="Salida de entradas coincidentes de búsqueda"
+                  synchronousInputId="Package\Añadir Authors\Búsqueda.Inputs[Entrada de búsqueda]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Añadir Authors\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[AuthorKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copiar columna"
+                      lineageId="Package\Añadir Authors\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[AuthorKey]"
+                      name="AuthorKey"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn">AuthorKey</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Añadir Authors\Búsqueda.Outputs[Salida de entradas no coincidentes de búsqueda]"
+                  description="Salida de búsqueda que trata las filas sin entradas coincidentes en el conjunto de datos de referencia. Utilice esta salida cuando la propiedad NoMatchBehavior esté establecida en 'Enviar las filas sin entradas coincidentes a la salida de entradas no coincidentes'."
+                  exclusionGroup="1"
+                  name="Salida de entradas no coincidentes de búsqueda"
+                  synchronousInputId="Package\Añadir Authors\Búsqueda.Inputs[Entrada de búsqueda]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Añadir Authors\Búsqueda.Outputs[Salida de error de búsqueda]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de búsqueda"
+                  synchronousInputId="Package\Añadir Authors\Búsqueda.Inputs[Entrada de búsqueda]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Añadir Authors\Búsqueda.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Añadir Authors\Búsqueda.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Añadir Authors\Búsqueda.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Añadir Authors\Búsqueda.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Añadir Authors\Origen de OLE DB"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+              description="Origen de OLE DB"
+              name="Origen de OLE DB"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">EXECUTE [dbo].[GetAuthorChangeByRowVersion] @startRow = ?, @endRow = ?</property>
+                <property
+                  dataType="System.String"
+                  description="Variable que contiene el comando SQL para ejecutar."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="Asignaciones entre los parámetros del comando SQL y las variables."
+                  name="ParameterMapping">"@startRow:Input",{183D7D5B-0032-4707-98CE-3AA028B3A2E8};"@endRow:Input",{63AFE304-20F5-4BA2-BAC9-76699CF1EE60};</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Añadir Authors\Origen de OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.Pubs_OLTP.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.Pubs_OLTP.sa]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB]"
+                  name="Salida de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[au_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[au_id]"
+                      length="11"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[au_id]"
+                      name="au_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[title_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[title_id]"
+                      length="6"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[title_id]"
+                      name="title_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[au_fname]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[au_fname]"
+                      length="20"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[au_fname]"
+                      name="au_fname"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[au_lname]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[au_lname]"
+                      length="40"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[au_lname]"
+                      name="au_lname"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[phone]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[phone]"
+                      length="12"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[phone]"
+                      name="phone"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[address]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[address]"
+                      length="40"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[address]"
+                      name="address"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[city]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[city]"
+                      length="20"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[city]"
+                      name="city"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[state]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[state]"
+                      length="2"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[state]"
+                      name="state"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[zip]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[zip]"
+                      length="5"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[zip]"
+                      name="zip"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[contract]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[contract]"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[contract]"
+                      name="contract"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[au_ord]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[au_ord]"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[au_ord]"
+                      name="au_ord"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[royaltyper]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[royaltyper]"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[royaltyper]"
+                      name="royaltyper"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[title]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[title]"
+                      length="80"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[title]"
+                      name="title"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[title_type]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[title_type]"
+                      length="12"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[title_type]"
+                      name="title_type"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[au_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="11"
+                      name="au_id" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[title_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      name="title_id" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[au_fname]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="au_fname" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[au_lname]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="au_lname" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[phone]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="phone" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[address]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="address" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[city]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="city" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[state]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="state" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[zip]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="zip" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[contract]"
+                      dataType="bool"
+                      name="contract" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[au_ord]"
+                      dataType="ui1"
+                      name="au_ord" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[royaltyper]"
+                      dataType="i4"
+                      name="royaltyper" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[title]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="title" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[title_type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="title_type" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[au_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="11"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[au_id]"
+                      name="au_id" />
+                    <outputColumn
+                      refId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[title_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[title_id]"
+                      name="title_id" />
+                    <outputColumn
+                      refId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[au_fname]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[au_fname]"
+                      name="au_fname" />
+                    <outputColumn
+                      refId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[au_lname]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[au_lname]"
+                      name="au_lname" />
+                    <outputColumn
+                      refId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[phone]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[phone]"
+                      name="phone" />
+                    <outputColumn
+                      refId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[address]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[address]"
+                      name="address" />
+                    <outputColumn
+                      refId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[city]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[city]"
+                      name="city" />
+                    <outputColumn
+                      refId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[state]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[state]"
+                      name="state" />
+                    <outputColumn
+                      refId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[zip]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[zip]"
+                      name="zip" />
+                    <outputColumn
+                      refId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[contract]"
+                      dataType="bool"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[contract]"
+                      name="contract" />
+                    <outputColumn
+                      refId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[au_ord]"
+                      dataType="ui1"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[au_ord]"
+                      name="au_ord" />
+                    <outputColumn
+                      refId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[royaltyper]"
+                      dataType="i4"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[royaltyper]"
+                      name="royaltyper" />
+                    <outputColumn
+                      refId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[title]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[title]"
+                      name="title" />
+                    <outputColumn
+                      refId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[title_type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[title_type]"
+                      name="title_type" />
+                    <outputColumn
+                      refId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Añadir Authors\Registros existentes"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino de OLE DB"
+              name="Registros existentes"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[staging].[author]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Añadir Authors\Registros existentes.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.PubsDataWarehouse.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.PubsDataWarehouse.sa]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Añadir Authors\Registros existentes.Inputs[Entrada de destino de OLE DB]"
+                  errorOrTruncationOperation="Insertar"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Añadir Authors\Registros existentes.Inputs[Entrada de destino de OLE DB].Columns[au_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="11"
+                      cachedName="au_id"
+                      externalMetadataColumnId="Package\Añadir Authors\Registros existentes.Inputs[Entrada de destino de OLE DB].ExternalColumns[au_id]"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[au_id]" />
+                    <inputColumn
+                      refId="Package\Añadir Authors\Registros existentes.Inputs[Entrada de destino de OLE DB].Columns[title_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="6"
+                      cachedName="title_id"
+                      externalMetadataColumnId="Package\Añadir Authors\Registros existentes.Inputs[Entrada de destino de OLE DB].ExternalColumns[title_id]"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[title_id]" />
+                    <inputColumn
+                      refId="Package\Añadir Authors\Registros existentes.Inputs[Entrada de destino de OLE DB].Columns[au_fname]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="au_fname"
+                      externalMetadataColumnId="Package\Añadir Authors\Registros existentes.Inputs[Entrada de destino de OLE DB].ExternalColumns[au_fname]"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[au_fname]" />
+                    <inputColumn
+                      refId="Package\Añadir Authors\Registros existentes.Inputs[Entrada de destino de OLE DB].Columns[au_lname]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="au_lname"
+                      externalMetadataColumnId="Package\Añadir Authors\Registros existentes.Inputs[Entrada de destino de OLE DB].ExternalColumns[au_lname]"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[au_lname]" />
+                    <inputColumn
+                      refId="Package\Añadir Authors\Registros existentes.Inputs[Entrada de destino de OLE DB].Columns[phone]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="12"
+                      cachedName="phone"
+                      externalMetadataColumnId="Package\Añadir Authors\Registros existentes.Inputs[Entrada de destino de OLE DB].ExternalColumns[phone]"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[phone]" />
+                    <inputColumn
+                      refId="Package\Añadir Authors\Registros existentes.Inputs[Entrada de destino de OLE DB].Columns[address]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="address"
+                      externalMetadataColumnId="Package\Añadir Authors\Registros existentes.Inputs[Entrada de destino de OLE DB].ExternalColumns[address]"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[address]" />
+                    <inputColumn
+                      refId="Package\Añadir Authors\Registros existentes.Inputs[Entrada de destino de OLE DB].Columns[city]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="city"
+                      externalMetadataColumnId="Package\Añadir Authors\Registros existentes.Inputs[Entrada de destino de OLE DB].ExternalColumns[city]"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[city]" />
+                    <inputColumn
+                      refId="Package\Añadir Authors\Registros existentes.Inputs[Entrada de destino de OLE DB].Columns[state]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="state"
+                      externalMetadataColumnId="Package\Añadir Authors\Registros existentes.Inputs[Entrada de destino de OLE DB].ExternalColumns[state]"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[state]" />
+                    <inputColumn
+                      refId="Package\Añadir Authors\Registros existentes.Inputs[Entrada de destino de OLE DB].Columns[zip]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="zip"
+                      externalMetadataColumnId="Package\Añadir Authors\Registros existentes.Inputs[Entrada de destino de OLE DB].ExternalColumns[zip]"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[zip]" />
+                    <inputColumn
+                      refId="Package\Añadir Authors\Registros existentes.Inputs[Entrada de destino de OLE DB].Columns[contract]"
+                      cachedDataType="bool"
+                      cachedName="contract"
+                      externalMetadataColumnId="Package\Añadir Authors\Registros existentes.Inputs[Entrada de destino de OLE DB].ExternalColumns[contract]"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[contract]" />
+                    <inputColumn
+                      refId="Package\Añadir Authors\Registros existentes.Inputs[Entrada de destino de OLE DB].Columns[au_ord]"
+                      cachedDataType="ui1"
+                      cachedName="au_ord"
+                      externalMetadataColumnId="Package\Añadir Authors\Registros existentes.Inputs[Entrada de destino de OLE DB].ExternalColumns[au_ord]"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[au_ord]" />
+                    <inputColumn
+                      refId="Package\Añadir Authors\Registros existentes.Inputs[Entrada de destino de OLE DB].Columns[royaltyper]"
+                      cachedDataType="i4"
+                      cachedName="royaltyper"
+                      externalMetadataColumnId="Package\Añadir Authors\Registros existentes.Inputs[Entrada de destino de OLE DB].ExternalColumns[royaltyper]"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[royaltyper]" />
+                    <inputColumn
+                      refId="Package\Añadir Authors\Registros existentes.Inputs[Entrada de destino de OLE DB].Columns[title]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="title"
+                      externalMetadataColumnId="Package\Añadir Authors\Registros existentes.Inputs[Entrada de destino de OLE DB].ExternalColumns[title]"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[title]" />
+                    <inputColumn
+                      refId="Package\Añadir Authors\Registros existentes.Inputs[Entrada de destino de OLE DB].Columns[title_type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="12"
+                      cachedName="title_type"
+                      externalMetadataColumnId="Package\Añadir Authors\Registros existentes.Inputs[Entrada de destino de OLE DB].ExternalColumns[title_type]"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[title_type]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Añadir Authors\Registros existentes.Inputs[Entrada de destino de OLE DB].ExternalColumns[au_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="11"
+                      name="au_id" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Authors\Registros existentes.Inputs[Entrada de destino de OLE DB].ExternalColumns[title_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      name="title_id" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Authors\Registros existentes.Inputs[Entrada de destino de OLE DB].ExternalColumns[au_fname]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="au_fname" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Authors\Registros existentes.Inputs[Entrada de destino de OLE DB].ExternalColumns[au_lname]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="au_lname" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Authors\Registros existentes.Inputs[Entrada de destino de OLE DB].ExternalColumns[phone]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="phone" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Authors\Registros existentes.Inputs[Entrada de destino de OLE DB].ExternalColumns[address]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="address" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Authors\Registros existentes.Inputs[Entrada de destino de OLE DB].ExternalColumns[city]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="city" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Authors\Registros existentes.Inputs[Entrada de destino de OLE DB].ExternalColumns[state]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="state" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Authors\Registros existentes.Inputs[Entrada de destino de OLE DB].ExternalColumns[zip]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="zip" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Authors\Registros existentes.Inputs[Entrada de destino de OLE DB].ExternalColumns[contract]"
+                      dataType="bool"
+                      name="contract" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Authors\Registros existentes.Inputs[Entrada de destino de OLE DB].ExternalColumns[au_ord]"
+                      dataType="ui1"
+                      name="au_ord" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Authors\Registros existentes.Inputs[Entrada de destino de OLE DB].ExternalColumns[royaltyper]"
+                      dataType="i4"
+                      name="royaltyper" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Authors\Registros existentes.Inputs[Entrada de destino de OLE DB].ExternalColumns[title]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="title" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Authors\Registros existentes.Inputs[Entrada de destino de OLE DB].ExternalColumns[title_type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="title_type" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Authors\Registros existentes.Inputs[Entrada de destino de OLE DB].ExternalColumns[ETL_BatchID]"
+                      dataType="i4"
+                      name="ETL_BatchID" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Authors\Registros existentes.Inputs[Entrada de destino de OLE DB].ExternalColumns[ETL_InsertedDate]"
+                      dataType="dbTimeStamp2"
+                      name="ETL_InsertedDate"
+                      scale="7" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Añadir Authors\Registros existentes.Outputs[Salida de error de destino de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de OLE DB"
+                  synchronousInputId="Package\Añadir Authors\Registros existentes.Inputs[Entrada de destino de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Añadir Authors\Registros existentes.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Añadir Authors\Registros existentes.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Añadir Authors\Registros existentes.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Añadir Authors\Registros existentes.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Añadir Authors\Registros nuevos"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino de OLE DB"
+              name="Registros nuevos"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[DimAuthor]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Añadir Authors\Registros nuevos.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.PubsDataWarehouse.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.PubsDataWarehouse.sa]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Añadir Authors\Registros nuevos.Inputs[Entrada de destino de OLE DB]"
+                  errorOrTruncationOperation="Insertar"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Añadir Authors\Registros nuevos.Inputs[Entrada de destino de OLE DB].Columns[au_fname]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="au_fname"
+                      externalMetadataColumnId="Package\Añadir Authors\Registros nuevos.Inputs[Entrada de destino de OLE DB].ExternalColumns[au_fname]"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[au_fname]" />
+                    <inputColumn
+                      refId="Package\Añadir Authors\Registros nuevos.Inputs[Entrada de destino de OLE DB].Columns[au_lname]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="au_lname"
+                      externalMetadataColumnId="Package\Añadir Authors\Registros nuevos.Inputs[Entrada de destino de OLE DB].ExternalColumns[au_lname]"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[au_lname]" />
+                    <inputColumn
+                      refId="Package\Añadir Authors\Registros nuevos.Inputs[Entrada de destino de OLE DB].Columns[phone]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="12"
+                      cachedName="phone"
+                      externalMetadataColumnId="Package\Añadir Authors\Registros nuevos.Inputs[Entrada de destino de OLE DB].ExternalColumns[phone]"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[phone]" />
+                    <inputColumn
+                      refId="Package\Añadir Authors\Registros nuevos.Inputs[Entrada de destino de OLE DB].Columns[address]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="address"
+                      externalMetadataColumnId="Package\Añadir Authors\Registros nuevos.Inputs[Entrada de destino de OLE DB].ExternalColumns[address]"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[address]" />
+                    <inputColumn
+                      refId="Package\Añadir Authors\Registros nuevos.Inputs[Entrada de destino de OLE DB].Columns[city]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="city"
+                      externalMetadataColumnId="Package\Añadir Authors\Registros nuevos.Inputs[Entrada de destino de OLE DB].ExternalColumns[city]"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[city]" />
+                    <inputColumn
+                      refId="Package\Añadir Authors\Registros nuevos.Inputs[Entrada de destino de OLE DB].Columns[state]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="state"
+                      externalMetadataColumnId="Package\Añadir Authors\Registros nuevos.Inputs[Entrada de destino de OLE DB].ExternalColumns[state]"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[state]" />
+                    <inputColumn
+                      refId="Package\Añadir Authors\Registros nuevos.Inputs[Entrada de destino de OLE DB].Columns[zip]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="zip"
+                      externalMetadataColumnId="Package\Añadir Authors\Registros nuevos.Inputs[Entrada de destino de OLE DB].ExternalColumns[zip]"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[zip]" />
+                    <inputColumn
+                      refId="Package\Añadir Authors\Registros nuevos.Inputs[Entrada de destino de OLE DB].Columns[contract]"
+                      cachedDataType="bool"
+                      cachedName="contract"
+                      externalMetadataColumnId="Package\Añadir Authors\Registros nuevos.Inputs[Entrada de destino de OLE DB].ExternalColumns[contract]"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[contract]" />
+                    <inputColumn
+                      refId="Package\Añadir Authors\Registros nuevos.Inputs[Entrada de destino de OLE DB].Columns[au_ord]"
+                      cachedDataType="ui1"
+                      cachedName="au_ord"
+                      externalMetadataColumnId="Package\Añadir Authors\Registros nuevos.Inputs[Entrada de destino de OLE DB].ExternalColumns[au_ord]"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[au_ord]" />
+                    <inputColumn
+                      refId="Package\Añadir Authors\Registros nuevos.Inputs[Entrada de destino de OLE DB].Columns[royaltyper]"
+                      cachedDataType="i4"
+                      cachedName="royaltyper"
+                      externalMetadataColumnId="Package\Añadir Authors\Registros nuevos.Inputs[Entrada de destino de OLE DB].ExternalColumns[royaltyper]"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[royaltyper]" />
+                    <inputColumn
+                      refId="Package\Añadir Authors\Registros nuevos.Inputs[Entrada de destino de OLE DB].Columns[title]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="title"
+                      externalMetadataColumnId="Package\Añadir Authors\Registros nuevos.Inputs[Entrada de destino de OLE DB].ExternalColumns[title]"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[title]" />
+                    <inputColumn
+                      refId="Package\Añadir Authors\Registros nuevos.Inputs[Entrada de destino de OLE DB].Columns[title_type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="12"
+                      cachedName="title_type"
+                      externalMetadataColumnId="Package\Añadir Authors\Registros nuevos.Inputs[Entrada de destino de OLE DB].ExternalColumns[title_type]"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[title_type]" />
+                    <inputColumn
+                      refId="Package\Añadir Authors\Registros nuevos.Inputs[Entrada de destino de OLE DB].Columns[au_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="11"
+                      cachedName="au_id"
+                      externalMetadataColumnId="Package\Añadir Authors\Registros nuevos.Inputs[Entrada de destino de OLE DB].ExternalColumns[au_id_original]"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[au_id]" />
+                    <inputColumn
+                      refId="Package\Añadir Authors\Registros nuevos.Inputs[Entrada de destino de OLE DB].Columns[title_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="6"
+                      cachedName="title_id"
+                      externalMetadataColumnId="Package\Añadir Authors\Registros nuevos.Inputs[Entrada de destino de OLE DB].ExternalColumns[title_id_original]"
+                      lineageId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[title_id]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Añadir Authors\Registros nuevos.Inputs[Entrada de destino de OLE DB].ExternalColumns[AuthorKey]"
+                      dataType="i4"
+                      name="AuthorKey" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Authors\Registros nuevos.Inputs[Entrada de destino de OLE DB].ExternalColumns[au_id_original]"
+                      codePage="1252"
+                      dataType="str"
+                      length="11"
+                      name="au_id_original" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Authors\Registros nuevos.Inputs[Entrada de destino de OLE DB].ExternalColumns[title_id_original]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      name="title_id_original" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Authors\Registros nuevos.Inputs[Entrada de destino de OLE DB].ExternalColumns[au_fname]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="au_fname" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Authors\Registros nuevos.Inputs[Entrada de destino de OLE DB].ExternalColumns[au_lname]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="au_lname" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Authors\Registros nuevos.Inputs[Entrada de destino de OLE DB].ExternalColumns[author_full_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="61"
+                      name="author_full_name" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Authors\Registros nuevos.Inputs[Entrada de destino de OLE DB].ExternalColumns[phone]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="phone" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Authors\Registros nuevos.Inputs[Entrada de destino de OLE DB].ExternalColumns[address]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="address" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Authors\Registros nuevos.Inputs[Entrada de destino de OLE DB].ExternalColumns[city]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="city" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Authors\Registros nuevos.Inputs[Entrada de destino de OLE DB].ExternalColumns[state]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="state" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Authors\Registros nuevos.Inputs[Entrada de destino de OLE DB].ExternalColumns[zip]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="zip" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Authors\Registros nuevos.Inputs[Entrada de destino de OLE DB].ExternalColumns[contract]"
+                      dataType="bool"
+                      name="contract" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Authors\Registros nuevos.Inputs[Entrada de destino de OLE DB].ExternalColumns[au_ord]"
+                      dataType="ui1"
+                      name="au_ord" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Authors\Registros nuevos.Inputs[Entrada de destino de OLE DB].ExternalColumns[royaltyper]"
+                      dataType="i4"
+                      name="royaltyper" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Authors\Registros nuevos.Inputs[Entrada de destino de OLE DB].ExternalColumns[title]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="title" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Authors\Registros nuevos.Inputs[Entrada de destino de OLE DB].ExternalColumns[title_type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="title_type" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Authors\Registros nuevos.Inputs[Entrada de destino de OLE DB].ExternalColumns[RowInsertedDate]"
+                      dataType="dbTimeStamp2"
+                      name="RowInsertedDate"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Authors\Registros nuevos.Inputs[Entrada de destino de OLE DB].ExternalColumns[RowUpdatedDate]"
+                      dataType="dbTimeStamp2"
+                      name="RowUpdatedDate"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Authors\Registros nuevos.Inputs[Entrada de destino de OLE DB].ExternalColumns[IsCurrentRecord]"
+                      dataType="bool"
+                      name="IsCurrentRecord" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Añadir Authors\Registros nuevos.Outputs[Salida de error de destino de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de OLE DB"
+                  synchronousInputId="Package\Añadir Authors\Registros nuevos.Inputs[Entrada de destino de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Añadir Authors\Registros nuevos.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Añadir Authors\Registros nuevos.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Añadir Authors\Registros nuevos.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Añadir Authors\Registros nuevos.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Añadir Authors.Paths[Salida de entradas coincidentes de búsqueda]"
+              endId="Package\Añadir Authors\Registros existentes.Inputs[Entrada de destino de OLE DB]"
+              name="Salida de entradas coincidentes de búsqueda"
+              startId="Package\Añadir Authors\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda]" />
+            <path
+              refId="Package\Añadir Authors.Paths[Salida de entradas no coincidentes de búsqueda]"
+              endId="Package\Añadir Authors\Registros nuevos.Inputs[Entrada de destino de OLE DB]"
+              name="Salida de entradas no coincidentes de búsqueda"
+              startId="Package\Añadir Authors\Búsqueda.Outputs[Salida de entradas no coincidentes de búsqueda]" />
+            <path
+              refId="Package\Añadir Authors.Paths[Salida de origen de OLE DB]"
+              endId="Package\Añadir Authors\Búsqueda.Inputs[Entrada de búsqueda]"
+              name="Salida de origen de OLE DB"
+              startId="Package\Añadir Authors\Origen de OLE DB.Outputs[Salida de origen de OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Ejecutar Merge"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{9C50D795-F7CB-44E4-ACBD-11C73238EADB}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Ejecutar Merge"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{149B3D33-68C3-461C-94B0-93E72D88A70D}"
+          SQLTask:SqlStatementSource="EXECUTE [dbo].[DW_MergeDimAuthor]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Limpiar staging"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{5F1DB9B2-5FE9-4FE7-867A-65807119F6CC}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Limpiar staging"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{149B3D33-68C3-461C-94B0-93E72D88A70D}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE [staging].[author]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Obtener primer cambio"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{462A0488-F9EF-4313-A51D-CFB819B7CF69}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Obtener primer cambio"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{149B3D33-68C3-461C-94B0-93E72D88A70D}"
+          SQLTask:SqlStatementSource="EXECUTE [dbo].[GetLastPackageRowVersion] @tableName = 'authors'"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="LastRowVersion"
+            SQLTask:DtsVariableName="User::lastrowvalue" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Obtener ultimo cambio"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{538F0868-4CF6-429F-8DE1-93EF910416F3}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Obtener ultimo cambio"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{BD715EB4-1B6C-41DA-95FF-2E7D47A179FB}"
+          SQLTask:SqlStatementSource="EXECUTE [dbo].[GetDatabaseRowVersion]"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="dbts"
+            SQLTask:DtsVariableName="User::dbts" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción]"
+      DTS:CreationName=""
+      DTS:DTSID="{BC74A740-D796-4AA3-BF6B-62E71A23B61A}"
+      DTS:From="Package\Obtener ultimo cambio"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción"
+      DTS:To="Package\Obtener primer cambio" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{3302910F-DE10-4944-8BF5-D318B11D49E8}"
+      DTS:From="Package\Obtener primer cambio"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 1"
+      DTS:To="Package\Limpiar staging" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{3A32EB99-CF72-46B7-9817-3E4395E61CF8}"
+      DTS:From="Package\Limpiar staging"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 2"
+      DTS:To="Package\Añadir Authors" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{76B1EEEE-D810-495D-B181-0E44696D48FF}"
+      DTS:From="Package\Añadir Authors"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 3"
+      DTS:To="Package\Ejecutar Merge" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{2B5F6E4D-5C22-4780-9C3D-B79851BC02F7}"
+      DTS:From="Package\Ejecutar Merge"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 4"
+      DTS:To="Package\Actualizacion" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="144,42"
+          Id="Package\Actualizacion"
+          TopLeft="282,450" />
+        <NodeLayout
+          Size="152,42"
+          Id="Package\Añadir Authors"
+          TopLeft="283,300" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Ejecutar Merge"
+          TopLeft="280,379" />
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Limpiar staging"
+          TopLeft="284,211" />
+        <NodeLayout
+          Size="191,42"
+          Id="Package\Obtener primer cambio"
+          TopLeft="273,133" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\Obtener ultimo cambio"
+          TopLeft="266,45" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="364.75,87">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46"
+              Start="0,0"
+              End="0,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 1]"
+          TopLeft="370.25,175">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 2]"
+          TopLeft="372,253">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-13,47"
+              Start="0,0"
+              End="-13,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.5"
+                    Point2="0,23.5"
+                    Point3="-4,23.5" />
+                  <mssgle:LineSegment
+                    End="-9,23.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-9,23.5"
+                    Point2="-13,23.5"
+                    Point3="-13,27.5" />
+                  <mssgle:LineSegment
+                    End="-13,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 3]"
+          TopLeft="358,342">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37"
+              Start="0,0"
+              End="0,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 4]"
+          TopLeft="355.5,421">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29"
+              Start="0,0"
+              End="0,21.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Añadir Authors">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Añadir Authors\Origen de OLE DB"
+          TopLeft="217,76" />
+        <NodeLayout
+          Size="129,42"
+          Id="Package\Añadir Authors\Búsqueda"
+          TopLeft="232,169" />
+        <EdgeLayout
+          Id="Package\Añadir Authors.Paths[Salida de origen de OLE DB]"
+          TopLeft="299.25,118">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51"
+              Start="0,0"
+              End="0,43.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="178,42"
+          Id="Package\Añadir Authors\Registros existentes"
+          TopLeft="111,258" />
+        <EdgeLayout
+          Id="Package\Añadir Authors.Paths[Salida de entradas coincidentes de búsqueda]"
+          TopLeft="296.5,211">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-96.5,47"
+              Start="0,0"
+              End="-96.5,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.5"
+                    Point2="0,23.5"
+                    Point3="-4,23.5" />
+                  <mssgle:LineSegment
+                    End="-92.5,23.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-92.5,23.5"
+                    Point2="-96.5,23.5"
+                    Point3="-96.5,27.5" />
+                  <mssgle:LineSegment
+                    End="-96.5,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-148.0690234375,28.5,199.638046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="164,42"
+          Id="Package\Añadir Authors\Registros nuevos"
+          TopLeft="435,311" />
+        <EdgeLayout
+          Id="Package\Añadir Authors.Paths[Salida de entradas no coincidentes de búsqueda]"
+          TopLeft="316.666666666667,211">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="200.333333333333,100"
+              Start="0,0"
+              End="200.333333333333,92.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.7350689127106" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,36.7350689127106"
+                    Point2="0,40.7350689127106"
+                    Point3="4,40.7350689127106" />
+                  <mssgle:LineSegment
+                    End="196.333333333333,40.7350689127106" />
+                  <mssgle:CubicBezierSegment
+                    Point1="196.333333333333,40.7350689127106"
+                    Point2="200.333333333333,40.7350689127106"
+                    Point3="200.333333333333,44.7350689127106" />
+                  <mssgle:LineSegment
+                    End="200.333333333333,92.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-6.72235677083331,45.7350689127106,213.778046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Añadir Authors\Origen de OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Añadir Authors\Registros nuevos">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Añadir Authors\Búsqueda">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimAuthor]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Añadir Authors\Registros existentes">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
