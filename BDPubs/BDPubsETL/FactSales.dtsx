@@ -1,0 +1,2239 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/27/2025 2:25:39 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-D34CDM2"
+  DTS:CreatorName="DESKTOP-D34CDM2\HP CORE i3"
+  DTS:DTSID="{A5A907A5-2B6F-4068-B824-9FDB97235AD7}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.2"
+  DTS:LocaleID="3082"
+  DTS:ObjectName="FactSales"
+  DTS:PackageType="5"
+  DTS:VersionBuild="77"
+  DTS:VersionGUID="{4F28B5B1-327E-42A6-B94A-09512606626A}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.PubsDataWarehouse.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{2E3D7794-71C4-496C-B6BC-4B4131AC9ADB}"
+      DTS:ObjectName="localhost.PubsDataWarehouse.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;User ID=sa;Initial Catalog=PubsDataWarehouse;Provider=MSOLEDBSQL.1;Auto Translate=False;Application Name=SSIS-DimAuthor-{2E3D7794-71C4-496C-B6BC-4B4131AC9ADB}localhost.PubsDataWarehouse.sa;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAnoSofNQxZEuNOLe4Po+kgQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA7vujBK/8nuz2iIfbz66tCmaNBaiUa1vxHcyW81/KmFAAAAAAOgAAAAAIAACAAAAB7U8tpA0xQP/+BzpQ2XJyP/MzXDiirE4BciIw16CfN0yAAAAAy9QZ73Pc8aDNnyZHNylbDoLiIGVZd5ldNIHa934QD9EAAAAALMTewMbg041aeO1wsWllzW+rJz7Rd1bAYt62bdX8gjn8zDwx4nvixJaA4zJ3GoR4lnfcpRzMuey0yBnh0GTPz</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.Pubs_OLTP.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{15F41C11-AFBC-4094-B4A8-72752B303425}"
+      DTS:ObjectName="localhost.Pubs_OLTP.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;User ID=sa;Initial Catalog=Pubs_OLTP;Provider=MSOLEDBSQL.1;Auto Translate=False;Application Name=SSIS-DimAuthor-{15F41C11-AFBC-4094-B4A8-72752B303425}localhost.Pubs_OLTP.sa;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAnoSofNQxZEuNOLe4Po+kgQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAJaUSWczXKs/mYpFDVNElCphrpLNDs3KEdK0m972m3ogAAAAAOgAAAAAIAACAAAABmCnYg+PmkXBxAIpsXc8ReA4Vrj2YDwCdkAg8hHnYFXyAAAAC6+Y5vVnPSqVGpgn+H7VTBEInPEJzMG54OaVby9hDV6EAAAAD6qDpUeLLL71WpLJH8IOL+3JQQ1Ks6mI12JmQHQKi1xP3FhP/X4BumNCkW5FcmL+jxtqJEoV7WGFoh+eXihDmG</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C319B4BF-2AF5-47F1-B924-CE2DC66788F3}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="dbts">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6489531F-6AF2-43D1-BCC2-CE645FC45143}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="lastrowvalue">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Actualizacion"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{BE44DA05-F43D-48FF-9B6A-B1E8750B9F02}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Actualizacion"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{2E3D7794-71C4-496C-B6BC-4B4131AC9ADB}"
+          SQLTask:SqlStatementSource="EXECUTE [dbo].[UpdateLastPackageRowVersion] @tableName = 'sales', @lastRowVersion = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::dbts"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Añadir Datos"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{FF27D64C-4880-495C-83D2-3B3FB802A212}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Añadir Datos"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Añadir Datos\Búsqueda Author"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Búsqueda;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;6"
+              description="Combina columnas adicionales con el flujo de datos mediante la búsqueda de valores en una tabla. Por ejemplo, se combina la columna 'id. de empleado' con la tabla de empleados para obtener la 'fecha de contratación' y 'el nombre de empleado'. Se recomienda esta transformación cuando hay suficiente espacio en memoria para la tabla de búsqueda."
+              name="Búsqueda Author"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la instrucción SQL que genera la tabla de búsqueda."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimAuthor]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica una instrucción SQL que usa parámetros para generar la tabla de búsqueda."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimAuthor]) [refTable]
+where [refTable].[au_id_original] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el tipo de conexión utilizado para tener acceso al conjunto de datos de referencia."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el tipo de caché de la tabla de búsqueda."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cómo la transformación de búsquedas trata las filas sin entradas coincidentes en el conjunto de datos de referencia."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el porcentaje de la caché asignado a las filas sin entradas coincidentes en el conjunto de datos de referencia."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Uso de memoria máximo para la caché de referencia en una plataforma de 32 bits."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Uso de memoria máximo para la caché de referencia en una plataforma de 64 bits."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indica si se debe hacer referencia a metadatos en formato XML."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="AuthorKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="au_id_original" dataType="DT_STR" length="11" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="title_id_original" dataType="DT_STR" length="6" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="au_fname" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="au_lname" dataType="DT_STR" length="40" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="author_full_name" dataType="DT_STR" length="61" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="phone" dataType="DT_STR" length="12" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="address" dataType="DT_STR" length="40" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="city" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="state" dataType="DT_STR" length="2" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="zip" dataType="DT_STR" length="5" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="contract" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="au_ord" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="royaltyper" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="title" dataType="DT_STR" length="80" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="title_type" dataType="DT_STR" length="12" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="RowInsertedDate" dataType="DT_DBTIMESTAMP2" length="0" precision="0" scale="7" codePage="0"/&gt;&lt;referenceColumn name="RowUpdatedDate" dataType="DT_DBTIMESTAMP2" length="0" precision="0" scale="7" codePage="0"/&gt;&lt;referenceColumn name="IsCurrentRecord" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Especifica la lista de identificadores de linaje que están asignados a los parámetros que usa la instrucción SQL de la propiedad SQLCommand. Las entradas de la lista están separadas por puntos y comas."
+                  name="ParameterMap">#{Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[au_id]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determina si las claves duplicadas de los datos de referencia se deben tratar como errores cuando se usa el modo de caché."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Añadir Datos\Búsqueda Author.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.PubsDataWarehouse.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.PubsDataWarehouse.sa]"
+                  description="Administrador de conexiones utilizado para obtener acceso a los datos de búsqueda."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Añadir Datos\Búsqueda Author.Inputs[Entrada de búsqueda]"
+                  name="Entrada de búsqueda">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Añadir Datos\Búsqueda Author.Inputs[Entrada de búsqueda].Columns[au_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="11"
+                      cachedName="au_id"
+                      lineageId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[au_id]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia con la que se combina una columna."
+                          name="JoinToReferenceColumn">au_id_original</property>
+                        <property
+                          dataType="System.Null"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Añadir Datos\Búsqueda Author.Outputs[Salida de entradas coincidentes de búsqueda]"
+                  errorOrTruncationOperation="Búsqueda"
+                  exclusionGroup="1"
+                  name="Salida de entradas coincidentes de búsqueda"
+                  synchronousInputId="Package\Añadir Datos\Búsqueda Author.Inputs[Entrada de búsqueda]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Añadir Datos\Búsqueda Author.Outputs[Salida de entradas coincidentes de búsqueda].Columns[AuthorKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copiar columna"
+                      lineageId="Package\Añadir Datos\Búsqueda Author.Outputs[Salida de entradas coincidentes de búsqueda].Columns[AuthorKey]"
+                      name="AuthorKey"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn">AuthorKey</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Añadir Datos\Búsqueda Author.Outputs[Salida de entradas no coincidentes de búsqueda]"
+                  description="Salida de búsqueda que trata las filas sin entradas coincidentes en el conjunto de datos de referencia. Utilice esta salida cuando la propiedad NoMatchBehavior esté establecida en 'Enviar las filas sin entradas coincidentes a la salida de entradas no coincidentes'."
+                  exclusionGroup="1"
+                  name="Salida de entradas no coincidentes de búsqueda"
+                  synchronousInputId="Package\Añadir Datos\Búsqueda Author.Inputs[Entrada de búsqueda]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Añadir Datos\Búsqueda Author.Outputs[Salida de error de búsqueda]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de búsqueda"
+                  synchronousInputId="Package\Añadir Datos\Búsqueda Author.Inputs[Entrada de búsqueda]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Añadir Datos\Búsqueda Author.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Añadir Datos\Búsqueda Author.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Añadir Datos\Búsqueda Author.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Añadir Datos\Búsqueda Author.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Añadir Datos\Búsqueda Sales"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Búsqueda;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;6"
+              description="Combina columnas adicionales con el flujo de datos mediante la búsqueda de valores en una tabla. Por ejemplo, se combina la columna 'id. de empleado' con la tabla de empleados para obtener la 'fecha de contratación' y 'el nombre de empleado'. Se recomienda esta transformación cuando hay suficiente espacio en memoria para la tabla de búsqueda."
+              name="Búsqueda Sales"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la instrucción SQL que genera la tabla de búsqueda."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[FactSales]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica una instrucción SQL que usa parámetros para generar la tabla de búsqueda."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[FactSales]) [refTable]
+where [refTable].[title_id_original] = ? and [refTable].[stor_id_original] = ? and [refTable].[ord_num] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el tipo de conexión utilizado para tener acceso al conjunto de datos de referencia."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el tipo de caché de la tabla de búsqueda."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cómo la transformación de búsquedas trata las filas sin entradas coincidentes en el conjunto de datos de referencia."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el porcentaje de la caché asignado a las filas sin entradas coincidentes en el conjunto de datos de referencia."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Uso de memoria máximo para la caché de referencia en una plataforma de 32 bits."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Uso de memoria máximo para la caché de referencia en una plataforma de 64 bits."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indica si se debe hacer referencia a metadatos en formato XML."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="SalesKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StoreKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TitleKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="AuthorKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="OrderDateKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="stor_id_original" dataType="DT_STR" length="4" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="title_id_original" dataType="DT_STR" length="6" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="au_id_original" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Quantity" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="UnitPrice" dataType="DT_CY" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TotalAmount" dataType="DT_CY" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DiscountPercent" dataType="DT_NUMERIC" length="0" precision="5" scale="2" codePage="0"/&gt;&lt;referenceColumn name="DiscountAmount" dataType="DT_NUMERIC" length="0" precision="29" scale="10" codePage="0"/&gt;&lt;referenceColumn name="NetAmount" dataType="DT_NUMERIC" length="0" precision="30" scale="10" codePage="0"/&gt;&lt;referenceColumn name="PayTerms" dataType="DT_STR" length="12" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="ord_num" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="OrderDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="RowInsertedDate" dataType="DT_DBTIMESTAMP2" length="0" precision="0" scale="7" codePage="0"/&gt;&lt;referenceColumn name="RowUpdatedDate" dataType="DT_DBTIMESTAMP2" length="0" precision="0" scale="7" codePage="0"/&gt;&lt;referenceColumn name="ETL_BatchID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Especifica la lista de identificadores de linaje que están asignados a los parámetros que usa la instrucción SQL de la propiedad SQLCommand. Las entradas de la lista están separadas por puntos y comas."
+                  name="ParameterMap">#{Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[title_id]};#{Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[stor_id]};#{Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[ord_num]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determina si las claves duplicadas de los datos de referencia se deben tratar como errores cuando se usa el modo de caché."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Añadir Datos\Búsqueda Sales.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.PubsDataWarehouse.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.PubsDataWarehouse.sa]"
+                  description="Administrador de conexiones utilizado para obtener acceso a los datos de búsqueda."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Añadir Datos\Búsqueda Sales.Inputs[Entrada de búsqueda]"
+                  name="Entrada de búsqueda">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Añadir Datos\Búsqueda Sales.Inputs[Entrada de búsqueda].Columns[title_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="6"
+                      cachedName="title_id"
+                      lineageId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[title_id]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia con la que se combina una columna."
+                          name="JoinToReferenceColumn">title_id_original</property>
+                        <property
+                          dataType="System.Null"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Añadir Datos\Búsqueda Sales.Inputs[Entrada de búsqueda].Columns[stor_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="stor_id"
+                      lineageId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[stor_id]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia con la que se combina una columna."
+                          name="JoinToReferenceColumn">stor_id_original</property>
+                        <property
+                          dataType="System.Null"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Añadir Datos\Búsqueda Sales.Inputs[Entrada de búsqueda].Columns[ord_num]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="ord_num"
+                      lineageId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[ord_num]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia con la que se combina una columna."
+                          name="JoinToReferenceColumn">ord_num</property>
+                        <property
+                          dataType="System.Null"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Añadir Datos\Búsqueda Sales.Outputs[Salida de entradas coincidentes de búsqueda]"
+                  errorOrTruncationOperation="Búsqueda"
+                  exclusionGroup="1"
+                  name="Salida de entradas coincidentes de búsqueda"
+                  synchronousInputId="Package\Añadir Datos\Búsqueda Sales.Inputs[Entrada de búsqueda]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Añadir Datos\Búsqueda Sales.Outputs[Salida de entradas coincidentes de búsqueda].Columns[SalesKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copiar columna"
+                      lineageId="Package\Añadir Datos\Búsqueda Sales.Outputs[Salida de entradas coincidentes de búsqueda].Columns[SalesKey]"
+                      name="SalesKey"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn">SalesKey</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Añadir Datos\Búsqueda Sales.Outputs[Salida de entradas no coincidentes de búsqueda]"
+                  description="Salida de búsqueda que trata las filas sin entradas coincidentes en el conjunto de datos de referencia. Utilice esta salida cuando la propiedad NoMatchBehavior esté establecida en 'Enviar las filas sin entradas coincidentes a la salida de entradas no coincidentes'."
+                  exclusionGroup="1"
+                  name="Salida de entradas no coincidentes de búsqueda"
+                  synchronousInputId="Package\Añadir Datos\Búsqueda Sales.Inputs[Entrada de búsqueda]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Añadir Datos\Búsqueda Sales.Outputs[Salida de error de búsqueda]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de búsqueda"
+                  synchronousInputId="Package\Añadir Datos\Búsqueda Sales.Inputs[Entrada de búsqueda]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Añadir Datos\Búsqueda Sales.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Añadir Datos\Búsqueda Sales.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Añadir Datos\Búsqueda Sales.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Añadir Datos\Búsqueda Sales.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Añadir Datos\Búsqueda Store"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Búsqueda;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;6"
+              description="Combina columnas adicionales con el flujo de datos mediante la búsqueda de valores en una tabla. Por ejemplo, se combina la columna 'id. de empleado' con la tabla de empleados para obtener la 'fecha de contratación' y 'el nombre de empleado'. Se recomienda esta transformación cuando hay suficiente espacio en memoria para la tabla de búsqueda."
+              name="Búsqueda Store"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la instrucción SQL que genera la tabla de búsqueda."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimStore]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica una instrucción SQL que usa parámetros para generar la tabla de búsqueda."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimStore]) [refTable]
+where [refTable].[stor_id_original] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el tipo de conexión utilizado para tener acceso al conjunto de datos de referencia."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el tipo de caché de la tabla de búsqueda."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cómo la transformación de búsquedas trata las filas sin entradas coincidentes en el conjunto de datos de referencia."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el porcentaje de la caché asignado a las filas sin entradas coincidentes en el conjunto de datos de referencia."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Uso de memoria máximo para la caché de referencia en una plataforma de 32 bits."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Uso de memoria máximo para la caché de referencia en una plataforma de 64 bits."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indica si se debe hacer referencia a metadatos en formato XML."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="StoreKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="stor_id_original" dataType="DT_STR" length="4" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="stor_name" dataType="DT_STR" length="40" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="stor_address" dataType="DT_STR" length="40" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="city" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="state" dataType="DT_STR" length="2" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="zip" dataType="DT_STR" length="5" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="RowInsertedDate" dataType="DT_DBTIMESTAMP2" length="0" precision="0" scale="7" codePage="0"/&gt;&lt;referenceColumn name="RowUpdatedDate" dataType="DT_DBTIMESTAMP2" length="0" precision="0" scale="7" codePage="0"/&gt;&lt;referenceColumn name="IsCurrentRecord" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Especifica la lista de identificadores de linaje que están asignados a los parámetros que usa la instrucción SQL de la propiedad SQLCommand. Las entradas de la lista están separadas por puntos y comas."
+                  name="ParameterMap">#{Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[stor_id]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determina si las claves duplicadas de los datos de referencia se deben tratar como errores cuando se usa el modo de caché."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Añadir Datos\Búsqueda Store.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.PubsDataWarehouse.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.PubsDataWarehouse.sa]"
+                  description="Administrador de conexiones utilizado para obtener acceso a los datos de búsqueda."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Añadir Datos\Búsqueda Store.Inputs[Entrada de búsqueda]"
+                  name="Entrada de búsqueda">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Añadir Datos\Búsqueda Store.Inputs[Entrada de búsqueda].Columns[stor_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="stor_id"
+                      lineageId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[stor_id]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia con la que se combina una columna."
+                          name="JoinToReferenceColumn">stor_id_original</property>
+                        <property
+                          dataType="System.Null"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Añadir Datos\Búsqueda Store.Outputs[Salida de entradas coincidentes de búsqueda]"
+                  errorOrTruncationOperation="Búsqueda"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Salida de entradas coincidentes de búsqueda"
+                  synchronousInputId="Package\Añadir Datos\Búsqueda Store.Inputs[Entrada de búsqueda]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Añadir Datos\Búsqueda Store.Outputs[Salida de entradas coincidentes de búsqueda].Columns[StoreKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copiar columna"
+                      lineageId="Package\Añadir Datos\Búsqueda Store.Outputs[Salida de entradas coincidentes de búsqueda].Columns[StoreKey]"
+                      name="StoreKey"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn">StoreKey</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Añadir Datos\Búsqueda Store.Outputs[Salida de entradas no coincidentes de búsqueda]"
+                  description="Salida de búsqueda que trata las filas sin entradas coincidentes en el conjunto de datos de referencia. Utilice esta salida cuando la propiedad NoMatchBehavior esté establecida en 'Enviar las filas sin entradas coincidentes a la salida de entradas no coincidentes'."
+                  exclusionGroup="1"
+                  name="Salida de entradas no coincidentes de búsqueda"
+                  synchronousInputId="Package\Añadir Datos\Búsqueda Store.Inputs[Entrada de búsqueda]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Añadir Datos\Búsqueda Store.Outputs[Salida de error de búsqueda]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de búsqueda"
+                  synchronousInputId="Package\Añadir Datos\Búsqueda Store.Inputs[Entrada de búsqueda]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Añadir Datos\Búsqueda Store.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Añadir Datos\Búsqueda Store.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Añadir Datos\Búsqueda Store.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Añadir Datos\Búsqueda Store.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Añadir Datos\Búsqueda Title"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Búsqueda;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;6"
+              description="Combina columnas adicionales con el flujo de datos mediante la búsqueda de valores en una tabla. Por ejemplo, se combina la columna 'id. de empleado' con la tabla de empleados para obtener la 'fecha de contratación' y 'el nombre de empleado'. Se recomienda esta transformación cuando hay suficiente espacio en memoria para la tabla de búsqueda."
+              name="Búsqueda Title"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la instrucción SQL que genera la tabla de búsqueda."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimTitle]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica una instrucción SQL que usa parámetros para generar la tabla de búsqueda."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimTitle]) [refTable]
+where [refTable].[title_id_original] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el tipo de conexión utilizado para tener acceso al conjunto de datos de referencia."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el tipo de caché de la tabla de búsqueda."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cómo la transformación de búsquedas trata las filas sin entradas coincidentes en el conjunto de datos de referencia."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el porcentaje de la caché asignado a las filas sin entradas coincidentes en el conjunto de datos de referencia."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Uso de memoria máximo para la caché de referencia en una plataforma de 32 bits."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Uso de memoria máximo para la caché de referencia en una plataforma de 64 bits."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indica si se debe hacer referencia a metadatos en formato XML."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="TitleKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="title_id_original" dataType="DT_STR" length="6" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="title" dataType="DT_STR" length="80" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="type" dataType="DT_STR" length="12" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="price" dataType="DT_CY" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="advance" dataType="DT_CY" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="royalty" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ytd_sales" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="notes" dataType="DT_STR" length="200" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="pubdate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="pub_id_original" dataType="DT_STR" length="3" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="publisher_name" dataType="DT_STR" length="40" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="publisher_city" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="publisher_state" dataType="DT_STR" length="2" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="publisher_country" dataType="DT_STR" length="30" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="RowInsertedDate" dataType="DT_DBTIMESTAMP2" length="0" precision="0" scale="7" codePage="0"/&gt;&lt;referenceColumn name="RowUpdatedDate" dataType="DT_DBTIMESTAMP2" length="0" precision="0" scale="7" codePage="0"/&gt;&lt;referenceColumn name="IsCurrentRecord" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Especifica la lista de identificadores de linaje que están asignados a los parámetros que usa la instrucción SQL de la propiedad SQLCommand. Las entradas de la lista están separadas por puntos y comas."
+                  name="ParameterMap">#{Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[title_id]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determina si las claves duplicadas de los datos de referencia se deben tratar como errores cuando se usa el modo de caché."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Añadir Datos\Búsqueda Title.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.PubsDataWarehouse.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.PubsDataWarehouse.sa]"
+                  description="Administrador de conexiones utilizado para obtener acceso a los datos de búsqueda."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Añadir Datos\Búsqueda Title.Inputs[Entrada de búsqueda]"
+                  name="Entrada de búsqueda">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Añadir Datos\Búsqueda Title.Inputs[Entrada de búsqueda].Columns[title_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="6"
+                      cachedName="title_id"
+                      lineageId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[title_id]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia con la que se combina una columna."
+                          name="JoinToReferenceColumn">title_id_original</property>
+                        <property
+                          dataType="System.Null"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Añadir Datos\Búsqueda Title.Outputs[Salida de entradas coincidentes de búsqueda]"
+                  errorOrTruncationOperation="Búsqueda"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Salida de entradas coincidentes de búsqueda"
+                  synchronousInputId="Package\Añadir Datos\Búsqueda Title.Inputs[Entrada de búsqueda]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Añadir Datos\Búsqueda Title.Outputs[Salida de entradas coincidentes de búsqueda].Columns[TitleKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copiar columna"
+                      lineageId="Package\Añadir Datos\Búsqueda Title.Outputs[Salida de entradas coincidentes de búsqueda].Columns[TitleKey]"
+                      name="TitleKey"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn">TitleKey</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Añadir Datos\Búsqueda Title.Outputs[Salida de entradas coincidentes de búsqueda].Columns[price]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Copiar columna"
+                      lineageId="Package\Añadir Datos\Búsqueda Title.Outputs[Salida de entradas coincidentes de búsqueda].Columns[price]"
+                      name="price"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn">price</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Añadir Datos\Búsqueda Title.Outputs[Salida de entradas no coincidentes de búsqueda]"
+                  description="Salida de búsqueda que trata las filas sin entradas coincidentes en el conjunto de datos de referencia. Utilice esta salida cuando la propiedad NoMatchBehavior esté establecida en 'Enviar las filas sin entradas coincidentes a la salida de entradas no coincidentes'."
+                  exclusionGroup="1"
+                  name="Salida de entradas no coincidentes de búsqueda"
+                  synchronousInputId="Package\Añadir Datos\Búsqueda Title.Inputs[Entrada de búsqueda]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Añadir Datos\Búsqueda Title.Outputs[Salida de error de búsqueda]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de búsqueda"
+                  synchronousInputId="Package\Añadir Datos\Búsqueda Title.Inputs[Entrada de búsqueda]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Añadir Datos\Búsqueda Title.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Añadir Datos\Búsqueda Title.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Añadir Datos\Búsqueda Title.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Añadir Datos\Búsqueda Title.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Añadir Datos\Destino de OLE DB"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino de OLE DB"
+              name="Destino de OLE DB"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[staging].[sales]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Añadir Datos\Destino de OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.PubsDataWarehouse.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.PubsDataWarehouse.sa]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Añadir Datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB]"
+                  errorOrTruncationOperation="Insertar"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Añadir Datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[ord_num]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="ord_num"
+                      externalMetadataColumnId="Package\Añadir Datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[ord_num]"
+                      lineageId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[ord_num]" />
+                    <inputColumn
+                      refId="Package\Añadir Datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[stor_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="stor_id"
+                      externalMetadataColumnId="Package\Añadir Datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[stor_id]"
+                      lineageId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[stor_id]" />
+                    <inputColumn
+                      refId="Package\Añadir Datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[title_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="6"
+                      cachedName="title_id"
+                      externalMetadataColumnId="Package\Añadir Datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[title_id]"
+                      lineageId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[title_id]" />
+                    <inputColumn
+                      refId="Package\Añadir Datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[ord_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="ord_date"
+                      externalMetadataColumnId="Package\Añadir Datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[ord_date]"
+                      lineageId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[ord_date]" />
+                    <inputColumn
+                      refId="Package\Añadir Datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[qty]"
+                      cachedDataType="i2"
+                      cachedName="qty"
+                      externalMetadataColumnId="Package\Añadir Datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[qty]"
+                      lineageId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[qty]" />
+                    <inputColumn
+                      refId="Package\Añadir Datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[payterms]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="12"
+                      cachedName="payterms"
+                      externalMetadataColumnId="Package\Añadir Datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[payterms]"
+                      lineageId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[payterms]" />
+                    <inputColumn
+                      refId="Package\Añadir Datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[price]"
+                      cachedDataType="cy"
+                      cachedName="price"
+                      externalMetadataColumnId="Package\Añadir Datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[unit_price]"
+                      lineageId="Package\Añadir Datos\Búsqueda Title.Outputs[Salida de entradas coincidentes de búsqueda].Columns[price]" />
+                    <inputColumn
+                      refId="Package\Añadir Datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[discount]"
+                      cachedDataType="numeric"
+                      cachedName="discount"
+                      cachedPrecision="4"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Añadir Datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[discount_percent]"
+                      lineageId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[discount]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Añadir Datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[ord_num]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="ord_num" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[ETL_BatchID]"
+                      dataType="i4"
+                      name="ETL_BatchID" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[stor_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="stor_id" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[title_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      name="title_id" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[ord_date]"
+                      dataType="dbTimeStamp"
+                      name="ord_date" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[qty]"
+                      dataType="i2"
+                      name="qty" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[payterms]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="payterms" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[unit_price]"
+                      dataType="cy"
+                      name="unit_price" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[discount_percent]"
+                      dataType="numeric"
+                      name="discount_percent"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[ETL_InsertedDate]"
+                      dataType="dbTimeStamp2"
+                      name="ETL_InsertedDate"
+                      scale="7" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Añadir Datos\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de OLE DB"
+                  synchronousInputId="Package\Añadir Datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Añadir Datos\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Añadir Datos\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Añadir Datos\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Añadir Datos\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Añadir Datos\Destino de OLE DB 1"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino de OLE DB"
+              name="Destino de OLE DB 1"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[FactSales]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Añadir Datos\Destino de OLE DB 1.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.PubsDataWarehouse.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.PubsDataWarehouse.sa]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Añadir Datos\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB]"
+                  errorOrTruncationOperation="Insertar"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Añadir Datos\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].Columns[ord_num]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="ord_num"
+                      externalMetadataColumnId="Package\Añadir Datos\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[ord_num]"
+                      lineageId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[ord_num]" />
+                    <inputColumn
+                      refId="Package\Añadir Datos\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].Columns[payterms]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="12"
+                      cachedName="payterms"
+                      externalMetadataColumnId="Package\Añadir Datos\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[PayTerms]"
+                      lineageId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[payterms]" />
+                    <inputColumn
+                      refId="Package\Añadir Datos\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].Columns[OrderDateKey]"
+                      cachedDataType="i4"
+                      cachedName="OrderDateKey"
+                      externalMetadataColumnId="Package\Añadir Datos\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[OrderDateKey]"
+                      lineageId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[OrderDateKey]" />
+                    <inputColumn
+                      refId="Package\Añadir Datos\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].Columns[TitleKey]"
+                      cachedDataType="i4"
+                      cachedName="TitleKey"
+                      externalMetadataColumnId="Package\Añadir Datos\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[TitleKey]"
+                      lineageId="Package\Añadir Datos\Búsqueda Title.Outputs[Salida de entradas coincidentes de búsqueda].Columns[TitleKey]" />
+                    <inputColumn
+                      refId="Package\Añadir Datos\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].Columns[StoreKey]"
+                      cachedDataType="i4"
+                      cachedName="StoreKey"
+                      externalMetadataColumnId="Package\Añadir Datos\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[StoreKey]"
+                      lineageId="Package\Añadir Datos\Búsqueda Store.Outputs[Salida de entradas coincidentes de búsqueda].Columns[StoreKey]" />
+                    <inputColumn
+                      refId="Package\Añadir Datos\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].Columns[AuthorKey]"
+                      cachedDataType="i4"
+                      cachedName="AuthorKey"
+                      externalMetadataColumnId="Package\Añadir Datos\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[AuthorKey]"
+                      lineageId="Package\Añadir Datos\Búsqueda Author.Outputs[Salida de entradas coincidentes de búsqueda].Columns[AuthorKey]" />
+                    <inputColumn
+                      refId="Package\Añadir Datos\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].Columns[stor_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="stor_id"
+                      externalMetadataColumnId="Package\Añadir Datos\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[stor_id_original]"
+                      lineageId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[stor_id]" />
+                    <inputColumn
+                      refId="Package\Añadir Datos\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].Columns[title_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="6"
+                      cachedName="title_id"
+                      externalMetadataColumnId="Package\Añadir Datos\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[title_id_original]"
+                      lineageId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[title_id]" />
+                    <inputColumn
+                      refId="Package\Añadir Datos\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].Columns[au_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="11"
+                      cachedName="au_id"
+                      externalMetadataColumnId="Package\Añadir Datos\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[au_id_original]"
+                      lineageId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[au_id]" />
+                    <inputColumn
+                      refId="Package\Añadir Datos\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].Columns[qty]"
+                      cachedDataType="i2"
+                      cachedName="qty"
+                      externalMetadataColumnId="Package\Añadir Datos\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[Quantity]"
+                      lineageId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[qty]" />
+                    <inputColumn
+                      refId="Package\Añadir Datos\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].Columns[ord_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="ord_date"
+                      externalMetadataColumnId="Package\Añadir Datos\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[OrderDate]"
+                      lineageId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[ord_date]" />
+                    <inputColumn
+                      refId="Package\Añadir Datos\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].Columns[price]"
+                      cachedDataType="cy"
+                      cachedName="price"
+                      externalMetadataColumnId="Package\Añadir Datos\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[UnitPrice]"
+                      lineageId="Package\Añadir Datos\Búsqueda Title.Outputs[Salida de entradas coincidentes de búsqueda].Columns[price]" />
+                    <inputColumn
+                      refId="Package\Añadir Datos\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].Columns[discount]"
+                      cachedDataType="numeric"
+                      cachedName="discount"
+                      cachedPrecision="4"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Añadir Datos\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[DiscountPercent]"
+                      lineageId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[discount]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Añadir Datos\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[SalesKey]"
+                      dataType="i4"
+                      name="SalesKey" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Datos\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[StoreKey]"
+                      dataType="i4"
+                      name="StoreKey" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Datos\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[TitleKey]"
+                      dataType="i4"
+                      name="TitleKey" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Datos\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[AuthorKey]"
+                      dataType="i4"
+                      name="AuthorKey" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Datos\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[OrderDateKey]"
+                      dataType="i4"
+                      name="OrderDateKey" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Datos\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[stor_id_original]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="stor_id_original" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Datos\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[title_id_original]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      name="title_id_original" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Datos\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[au_id_original]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="au_id_original" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Datos\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[Quantity]"
+                      dataType="i2"
+                      name="Quantity" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Datos\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[UnitPrice]"
+                      dataType="cy"
+                      name="UnitPrice" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Datos\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[TotalAmount]"
+                      dataType="cy"
+                      name="TotalAmount" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Datos\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[DiscountPercent]"
+                      dataType="numeric"
+                      name="DiscountPercent"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Datos\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[DiscountAmount]"
+                      dataType="numeric"
+                      name="DiscountAmount"
+                      precision="29"
+                      scale="10" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Datos\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[NetAmount]"
+                      dataType="numeric"
+                      name="NetAmount"
+                      precision="30"
+                      scale="10" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Datos\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[PayTerms]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="PayTerms" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Datos\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[ord_num]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="ord_num" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Datos\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[OrderDate]"
+                      dataType="dbTimeStamp"
+                      name="OrderDate" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Datos\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[RowInsertedDate]"
+                      dataType="dbTimeStamp2"
+                      name="RowInsertedDate"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Datos\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[RowUpdatedDate]"
+                      dataType="dbTimeStamp2"
+                      name="RowUpdatedDate"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Datos\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[ETL_BatchID]"
+                      dataType="i4"
+                      name="ETL_BatchID" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Añadir Datos\Destino de OLE DB 1.Outputs[Salida de error de destino de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de OLE DB"
+                  synchronousInputId="Package\Añadir Datos\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Añadir Datos\Destino de OLE DB 1.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Añadir Datos\Destino de OLE DB 1.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Añadir Datos\Destino de OLE DB 1.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Añadir Datos\Destino de OLE DB 1.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Añadir Datos\Origen de OLE DB"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+              description="Origen de OLE DB"
+              name="Origen de OLE DB"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">EXECUTE [dbo].[GetSalesChangeByRowVersion] @startRow = ?, @endRow = ?</property>
+                <property
+                  dataType="System.String"
+                  description="Variable que contiene el comando SQL para ejecutar."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="Asignaciones entre los parámetros del comando SQL y las variables."
+                  name="ParameterMapping">"@startRow:Input",{6489531F-6AF2-43D1-BCC2-CE645FC45143};"@endRow:Input",{C319B4BF-2AF5-47F1-B924-CE2DC66788F3};</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Añadir Datos\Origen de OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.Pubs_OLTP.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.Pubs_OLTP.sa]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB]"
+                  name="Salida de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[title_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[title_id]"
+                      length="6"
+                      lineageId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[title_id]"
+                      name="title_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[stor_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[stor_id]"
+                      length="4"
+                      lineageId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[stor_id]"
+                      name="stor_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[ord_num]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[ord_num]"
+                      length="20"
+                      lineageId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[ord_num]"
+                      name="ord_num"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[ord_date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[ord_date]"
+                      lineageId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[ord_date]"
+                      name="ord_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[qty]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[qty]"
+                      lineageId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[qty]"
+                      name="qty"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[payterms]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[payterms]"
+                      length="12"
+                      lineageId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[payterms]"
+                      name="payterms"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[OrderDateKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[OrderDateKey]"
+                      lineageId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[OrderDateKey]"
+                      name="OrderDateKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[au_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[au_id]"
+                      length="11"
+                      lineageId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[au_id]"
+                      name="au_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[discount]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[discount]"
+                      lineageId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[discount]"
+                      name="discount"
+                      precision="4"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[title_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      name="title_id" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[stor_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="stor_id" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[ord_num]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="ord_num" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[ord_date]"
+                      dataType="dbTimeStamp"
+                      name="ord_date" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[qty]"
+                      dataType="i2"
+                      name="qty" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[payterms]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="payterms" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[OrderDateKey]"
+                      dataType="i4"
+                      name="OrderDateKey" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[au_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="11"
+                      name="au_id" />
+                    <externalMetadataColumn
+                      refId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[discount]"
+                      dataType="numeric"
+                      name="discount"
+                      precision="4"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[stor_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[stor_id]"
+                      name="stor_id" />
+                    <outputColumn
+                      refId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ord_num]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ord_num]"
+                      name="ord_num" />
+                    <outputColumn
+                      refId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ord_date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ord_date]"
+                      name="ord_date" />
+                    <outputColumn
+                      refId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[qty]"
+                      dataType="i2"
+                      lineageId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[qty]"
+                      name="qty" />
+                    <outputColumn
+                      refId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[payterms]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      lineageId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[payterms]"
+                      name="payterms" />
+                    <outputColumn
+                      refId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[title_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      lineageId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[title_id]"
+                      name="title_id" />
+                    <outputColumn
+                      refId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[au_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="11"
+                      lineageId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[au_id]"
+                      name="au_id" />
+                    <outputColumn
+                      refId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[discount]"
+                      dataType="numeric"
+                      lineageId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[discount]"
+                      name="discount"
+                      precision="4"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[OrderDateKey]"
+                      dataType="i4"
+                      lineageId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[OrderDateKey]"
+                      name="OrderDateKey" />
+                    <outputColumn
+                      refId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Añadir Datos.Paths[Salida de entradas coincidentes de búsqueda]"
+              endId="Package\Añadir Datos\Búsqueda Store.Inputs[Entrada de búsqueda]"
+              name="Salida de entradas coincidentes de búsqueda"
+              startId="Package\Añadir Datos\Búsqueda Title.Outputs[Salida de entradas coincidentes de búsqueda]" />
+            <path
+              refId="Package\Añadir Datos.Paths[Salida de entradas coincidentes de búsqueda1]"
+              endId="Package\Añadir Datos\Búsqueda Author.Inputs[Entrada de búsqueda]"
+              name="Salida de entradas coincidentes de búsqueda"
+              startId="Package\Añadir Datos\Búsqueda Store.Outputs[Salida de entradas coincidentes de búsqueda]" />
+            <path
+              refId="Package\Añadir Datos.Paths[Salida de entradas coincidentes de búsqueda2]"
+              endId="Package\Añadir Datos\Búsqueda Sales.Inputs[Entrada de búsqueda]"
+              name="Salida de entradas coincidentes de búsqueda"
+              startId="Package\Añadir Datos\Búsqueda Author.Outputs[Salida de entradas coincidentes de búsqueda]" />
+            <path
+              refId="Package\Añadir Datos.Paths[Salida de entradas coincidentes de búsqueda3]"
+              endId="Package\Añadir Datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB]"
+              name="Salida de entradas coincidentes de búsqueda"
+              startId="Package\Añadir Datos\Búsqueda Sales.Outputs[Salida de entradas coincidentes de búsqueda]" />
+            <path
+              refId="Package\Añadir Datos.Paths[Salida de entradas no coincidentes de búsqueda]"
+              endId="Package\Añadir Datos\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB]"
+              name="Salida de entradas no coincidentes de búsqueda"
+              startId="Package\Añadir Datos\Búsqueda Sales.Outputs[Salida de entradas no coincidentes de búsqueda]" />
+            <path
+              refId="Package\Añadir Datos.Paths[Salida de origen de OLE DB]"
+              endId="Package\Añadir Datos\Búsqueda Title.Inputs[Entrada de búsqueda]"
+              name="Salida de origen de OLE DB"
+              startId="Package\Añadir Datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Ejecutar Merge"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{7A0D0C9E-B16A-4F64-AFDE-28E5CB063220}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Ejecutar Merge"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{2E3D7794-71C4-496C-B6BC-4B4131AC9ADB}"
+          SQLTask:SqlStatementSource="EXECUTE [dbo].[DW_MergeFactSales2]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Limpiar staging"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{350D1748-4E00-400C-BE7F-57FFE297F676}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Limpiar staging"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{2E3D7794-71C4-496C-B6BC-4B4131AC9ADB}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE [staging].[sales]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Obtener primer cambio"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{C808E46D-FA4B-455D-9A2C-55D1AA5AA6F0}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Obtener primer cambio"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{2E3D7794-71C4-496C-B6BC-4B4131AC9ADB}"
+          SQLTask:SqlStatementSource="EXECUTE [dbo].[GetLastPackageRowVersion] @tableName = 'sales'"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="LastRowVersion"
+            SQLTask:DtsVariableName="User::lastrowvalue" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Obtener ultimo cambio"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{4E4C1081-E4E6-4D38-B4ED-C833A1B0D572}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Obtener ultimo cambio"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{15F41C11-AFBC-4094-B4A8-72752B303425}"
+          SQLTask:SqlStatementSource="EXECUTE [dbo].[GetDatabaseRowVersion]"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="dbts"
+            SQLTask:DtsVariableName="User::dbts" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción]"
+      DTS:CreationName=""
+      DTS:DTSID="{8F71BE91-166F-4C86-BA5B-E1A44B1550BB}"
+      DTS:From="Package\Obtener ultimo cambio"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción"
+      DTS:To="Package\Obtener primer cambio" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{5B634B17-4E9C-47CE-AABA-5D627F467EF7}"
+      DTS:From="Package\Obtener primer cambio"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 1"
+      DTS:To="Package\Limpiar staging" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{AED038B7-0D3C-4EC4-AB4A-F0F33917AC69}"
+      DTS:From="Package\Limpiar staging"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 2"
+      DTS:To="Package\Añadir Datos" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{064C0A5E-71D6-4B3A-AC15-9C0E6B431133}"
+      DTS:From="Package\Añadir Datos"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 3"
+      DTS:To="Package\Ejecutar Merge" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{14C76D7E-DCFA-4154-87B4-C12BEBAE0F94}"
+      DTS:From="Package\Ejecutar Merge"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 4"
+      DTS:To="Package\Actualizacion" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="144,42"
+          Id="Package\Actualizacion"
+          TopLeft="292,453" />
+        <NodeLayout
+          Size="143,42"
+          Id="Package\Añadir Datos"
+          TopLeft="283,300" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Ejecutar Merge"
+          TopLeft="280,379" />
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Limpiar staging"
+          TopLeft="284,211" />
+        <NodeLayout
+          Size="191,42"
+          Id="Package\Obtener primer cambio"
+          TopLeft="273,133" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\Obtener ultimo cambio"
+          TopLeft="266,45" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="364.75,87">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46"
+              Start="0,0"
+              End="0,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 1]"
+          TopLeft="370.25,175">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 2]"
+          TopLeft="372,253">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-17.5,47"
+              Start="0,0"
+              End="-17.5,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.5"
+                    Point2="0,23.5"
+                    Point3="-4,23.5" />
+                  <mssgle:LineSegment
+                    End="-13.5,23.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-13.5,23.5"
+                    Point2="-17.5,23.5"
+                    Point3="-17.5,27.5" />
+                  <mssgle:LineSegment
+                    End="-17.5,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 3]"
+          TopLeft="355.75,342">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37"
+              Start="0,0"
+              End="0,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 4]"
+          TopLeft="360.5,421">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32"
+              Start="0,0"
+              End="0,24.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Añadir Datos">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Añadir Datos\Origen de OLE DB"
+          TopLeft="217,76" />
+        <NodeLayout
+          Size="164,42"
+          Id="Package\Añadir Datos\Búsqueda Author"
+          TopLeft="226,326" />
+        <NodeLayout
+          Size="152,42"
+          Id="Package\Añadir Datos\Búsqueda Title"
+          TopLeft="233,150" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\Añadir Datos\Búsqueda Store"
+          TopLeft="231,226" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Añadir Datos\Destino de OLE DB"
+          TopLeft="91,501" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Añadir Datos\Búsqueda Sales"
+          TopLeft="236,411" />
+        <NodeLayout
+          Size="184,42"
+          Id="Package\Añadir Datos\Destino de OLE DB 1"
+          TopLeft="466,510" />
+        <EdgeLayout
+          Id="Package\Añadir Datos.Paths[Salida de origen de OLE DB]"
+          TopLeft="305.5,118">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32"
+              Start="0,0"
+              End="0,24.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,4.25,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Añadir Datos.Paths[Salida de entradas no coincidentes de búsqueda]"
+          TopLeft="340.666666666667,453">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="217.333333333333,57"
+              Start="0,0"
+              End="217.333333333333,49.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.1407222914072" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.1407222914072"
+                    Point2="0,23.1407222914072"
+                    Point3="4,23.1407222914072" />
+                  <mssgle:LineSegment
+                    End="213.333333333333,23.1407222914072" />
+                  <mssgle:CubicBezierSegment
+                    Point1="213.333333333333,23.1407222914072"
+                    Point2="217.333333333333,23.1407222914072"
+                    Point3="217.333333333333,27.1407222914072" />
+                  <mssgle:LineSegment
+                    End="217.333333333333,49.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-6.91034505208331,28.1407222914072,231.1540234375,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Añadir Datos.Paths[Salida de entradas coincidentes de búsqueda3]"
+          TopLeft="290.333333333333,453">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-111.833333333333,48"
+              Start="0,0"
+              End="-111.833333333333,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.4869240348692" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.4869240348692"
+                    Point2="0,19.4869240348692"
+                    Point3="-4,19.4869240348692" />
+                  <mssgle:LineSegment
+                    End="-107.833333333333,19.4869240348692" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-107.833333333333,19.4869240348692"
+                    Point2="-111.833333333333,19.4869240348692"
+                    Point3="-111.833333333333,23.4869240348692" />
+                  <mssgle:LineSegment
+                    End="-111.833333333333,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-164.423678385417,24.4869240348692,217.0140234375,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Añadir Datos.Paths[Salida de entradas coincidentes de búsqueda2]"
+          TopLeft="311.75,368">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43"
+              Start="0,0"
+              End="0,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-108.50701171875,9.75,217.0140234375,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Añadir Datos.Paths[Salida de entradas coincidentes de búsqueda1]"
+          TopLeft="309,268">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58"
+              Start="0,0"
+              End="0,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-99.8190234375,19.15234375,199.638046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Añadir Datos.Paths[Salida de entradas coincidentes de búsqueda]"
+          TopLeft="309.5,192">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34"
+              Start="0,0"
+              End="0,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-108.50701171875,5.25,217.0140234375,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Añadir Datos\Origen de OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Añadir Datos\Búsqueda Author">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimAuthor]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Añadir Datos\Búsqueda Title">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimTitle]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Añadir Datos\Búsqueda Store">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimStore]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Añadir Datos\Destino de OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Añadir Datos\Búsqueda Sales">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[FactSales]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Añadir Datos\Destino de OLE DB 1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
