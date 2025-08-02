@@ -37,5 +37,4 @@ CREATE TABLE DimTitle (
     
     -- Constraints
     CONSTRAINT PK_DimTitle PRIMARY KEY (TitleKey),
-    CONSTRAINT UK_DimTitle_TitleID UNIQUE (title_id_original)
 );

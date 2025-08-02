@@ -19,7 +19,7 @@ CREATE TABLE FactSales (
     -- Business Keys originales (para lookup y debugging)
     stor_id_original CHAR(4) NOT NULL,
     title_id_original VARCHAR(6) NOT NULL,
-    ord_num_original VARCHAR(20) NOT NULL,
+    au_id_original VARCHAR(20) NOT NULL,
     
     -- Medidas del hecho (valores numéricos para análisis)
     Quantity SMALLINT NOT NULL,
@@ -31,6 +31,7 @@ CREATE TABLE FactSales (
     
     -- Información adicional de la venta
     PayTerms VARCHAR(12) NULL,
+    ord_num VARCHAR(20) NOT NULL,
     
     -- Fechas originales (para comparación)
     OrderDate DATETIME NOT NULL,

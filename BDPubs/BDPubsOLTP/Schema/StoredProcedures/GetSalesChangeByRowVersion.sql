@@ -14,15 +14,17 @@ BEGIN
 	SET NOCOUNT ON;
 
     -- Insert statements for procedure here
-SELECT [stor_id]
-      ,[ord_num]
-      ,[ord_date]
-      ,[qty]
-      ,[payterms]
-      ,[title_id]
-	  ,OrderDateKey=DATEDIFF(s, '19700101', CONVERT(datetime,[ord_date]))
-  FROM [pubs].[dbo].[sales] as s
-  where s.[RowVersion]>CONVERT(rowversion, @startRow) and s.[RowVersion]<=CONVERT(rowversion, @endRow)
+SELECT s.[stor_id]
+		,s.[ord_num]
+		,s.[ord_date]
+		,s.[qty]
+		,s.[payterms]
+		,s.[title_id]
+		,ta.[au_id]
+		,CONVERT(INT, CONVERT(VARCHAR(8), s.[ord_date], 112)) AS OrderDateKey
+FROM [dbo].[sales] AS s
+INNER JOIN [dbo].[titleauthor] AS ta ON s.[title_id] = ta.[title_id]
+where s.[RowVersion]>CONVERT(rowversion, @startRow) and s.[RowVersion]<=CONVERT(rowversion, @endRow)
 END
 
 GO
