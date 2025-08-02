@@ -336,12 +336,13 @@ GO
 ### 2. Deploy Estructura
 ```sql
 -- Ejecutar scripts en orden:
--- 1. BDPubs/BDPubsDW/Schema/Security/schemas/staging.sql
--- 2. BDPubs/BDPubsDW/Schema/Tables/dbo/*.sql (todas las dimensiones)
--- 3. BDPubs/BDPubsDW/Schema/Tables/staging/*.sql (tablas staging)
--- 4. BDPubs/BDPubsDW/Schema/Programmability/Stored Procedures/*.sql
--- 5. BDPubs/BDPubsDW/Scripts/PackageConfig.data.sql
--- 6. BDPubs/BDPubsDW/Scripts/DimDate.data.sql
+-- 1. BDPubs/BDPubsOLTP/Schema/StoredProcedures/*.sql
+-- 2. BDPubs/BDPubsDW/Schema/Security/schemas/staging.sql
+-- 3. BDPubs/BDPubsDW/Schema/Tables/dbo/*.sql (todas las dimensiones)
+-- 4. BDPubs/BDPubsDW/Schema/Tables/staging/*.sql (tablas staging)
+-- 5. BDPubs/BDPubsDW/Schema/Programmability/Stored Procedures/*.sql
+-- 6. BDPubs/BDPubsDW/Scripts/PackageConfig.data.sql
+-- 7. BDPubs/BDPubsDW/Scripts/DimDate.data.sql
 ```
 
 ### 3. Verificar Setup
