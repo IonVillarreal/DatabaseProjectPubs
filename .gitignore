@@ -66,7 +66,6 @@ dlldata.c
 *.mdf
 *.ldf
 *.ndf
-*.bak
 *.trn
 
 ## Azure Functions localsettings file
